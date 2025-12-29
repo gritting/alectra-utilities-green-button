@@ -1,0 +1,6 @@
+alectra_utilities_green_button:
+  module: call_script
+  class: CallScript
+  event: alectra_utilities_green_button
+  run_on_startup: false
+  script: /config/apps/alectra_utilities_green_button.py
