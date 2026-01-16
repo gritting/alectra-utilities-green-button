@@ -21,7 +21,7 @@ from selenium.webdriver.firefox.service import Service
 
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
-__version__ = '0.2.6'
+__version__ = '0.2.7'
 
 logging.basicConfig(
     level=logging.INFO,
@@ -215,10 +215,6 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
 
 
 def main(argv: Optional[List[str]] = None) -> None:
-    logger.info("=" * 50)
-    logger.info("Alectra Green Button Data Export - Starting")
-    logger.info("=" * 50)
-    
     args = parse_args(argv)
 
     account_name = args.account_name or input('Account Name:  ')
@@ -233,6 +229,9 @@ def main(argv: Optional[List[str]] = None) -> None:
         logger.error(f"phone: {'set' if phone else 'MISSING'}")
         return
 
+    logger.info("=" * 50)
+    logger.info("Alectra Green Button Data Export - Starting")
+    logger.info("=" * 50)
     logger.debug(f"Account Name: {account_name[:1]}***")
     logger.debug(f"Account ID:  {account_id[:1]}***")
     logger.debug(f"Phone:  {phone[:1]}***")
